@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import './App.css'
 
-function App() {
-  const [impressumOpen, setImpressumOpen] = useState(false)
+function App({ altFont = false }) {
+  const [imprintOpen, setImprintOpen] = useState(false)
 
   return (
     <div className="page">
@@ -16,7 +16,15 @@ function App() {
       </div>
 
       <main className="content">
-        <div className="logo" aria-label="Blise">Blise</div>
+        {altFont ? (
+          <img
+            className={`logo-svg${imprintOpen ? ' logo--hidden' : ''}`}
+            src="/FAVICONS (29).png"
+            alt="Brise"
+          />
+        ) : (
+          <div className={`logo${imprintOpen ? ' logo--hidden' : ''}`} aria-label="Blise">Blise</div>
+        )}
 
         <p className="tagline">
           The parent company for thoughtfully built software applications.
@@ -24,30 +32,31 @@ function App() {
 
         <a
           className="product-link"
-          href="#"
+          href="https://www.wrestlingoctopi.com/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Our Product
+          Wrestling Octopi
+          <svg className="product-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 13L13 3M6 3H13V10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
         </a>
-
-        <nav className="footer-nav">
-          <button
-            className="impress-btn"
-            onClick={() => setImpressumOpen(true)}
-          >
-            Impress
-          </button>
-        </nav>
       </main>
 
-      {impressumOpen && (
+      <button
+        className="impress-btn"
+        onClick={() => setImprintOpen(true)}
+      >
+        Imprint
+      </button>
+
+      {imprintOpen && (
         <div
           className="modal-overlay"
-          onClick={() => setImpressumOpen(false)}
+          onClick={() => setImprintOpen(false)}
           role="dialog"
           aria-modal="true"
-          aria-label="Impressum"
+          aria-label="Imprint"
         >
           <div
             className="modal-glass"
@@ -55,12 +64,12 @@ function App() {
           >
             <button
               className="modal-close"
-              onClick={() => setImpressumOpen(false)}
+              onClick={() => setImprintOpen(false)}
               aria-label="Close"
             >
               ×
             </button>
-            <h2 className="modal-title">Impressum</h2>
+            <h2 className="modal-title">Imprint</h2>
             <div className="modal-body">
               <p><strong>Blise</strong></p>
               <p>

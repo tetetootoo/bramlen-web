@@ -46,6 +46,7 @@ body,
   position: absolute;
   border-radius: 50%;
   opacity: 0.85;
+  will-change: transform, border-radius;
 }
 
 .blob-blue {
@@ -54,7 +55,7 @@ body,
   background: var(--blue);
   bottom: -20vw;
   left: -15vw;
-  animation: driftBlue 22s ease-in-out infinite;
+  animation: driftBlue 5.5s ease-in-out infinite;
 }
 
 .blob-purple {
@@ -63,7 +64,7 @@ body,
   background: var(--purple);
   top: -10vw;
   left: -5vw;
-  animation: driftPurple 26s ease-in-out infinite;
+  animation: driftPurple 6.5s ease-in-out infinite;
 }
 
 .blob-magenta {
@@ -72,7 +73,7 @@ body,
   background: var(--magenta);
   top: 20%;
   right: -10vw;
-  animation: driftMagenta 20s ease-in-out infinite;
+  animation: driftMagenta 5s ease-in-out infinite;
 }
 
 .blob-cyan {
@@ -81,7 +82,7 @@ body,
   background: var(--cyan);
   top: 30%;
   right: 10%;
-  animation: driftCyan 24s ease-in-out infinite;
+  animation: driftCyan 6s ease-in-out infinite;
 }
 
 .blob-red {
@@ -90,7 +91,7 @@ body,
   background: var(--red);
   top: -15vw;
   right: -5vw;
-  animation: driftRed 18s ease-in-out infinite;
+  animation: driftRed 4.5s ease-in-out infinite;
 }
 
 .blob-pink {
@@ -99,42 +100,57 @@ body,
   background: var(--pink);
   bottom: 5%;
   right: 5%;
-  animation: driftPink 28s ease-in-out infinite;
+  animation: driftPink 7s ease-in-out infinite;
 }
 
 @keyframes driftBlue {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33%       { transform: translate(4%, -6%) scale(1.05); }
-  66%       { transform: translate(-3%, 5%) scale(0.97); }
+  0%   { transform: translate(0, 0) scale(1) rotate(0deg);    border-radius: 50%; }
+  20%  { transform: translate(4%, -5%) scale(1.04) rotate(10deg);  border-radius: 46% 54% 52% 48% / 50% 46% 54% 50%; }
+  40%  { transform: translate(7%, 3%) scale(0.97) rotate(-6deg);   border-radius: 54% 46% 48% 52% / 52% 56% 44% 48%; }
+  60%  { transform: translate(-3%, 8%) scale(1.06) rotate(7deg);   border-radius: 48% 52% 54% 46% / 56% 44% 56% 44%; }
+  80%  { transform: translate(-6%, -2%) scale(1.02) rotate(-9deg); border-radius: 52% 48% 46% 54% / 46% 54% 46% 54%; }
+  100% { transform: translate(0, 0) scale(1) rotate(0deg);    border-radius: 50%; }
 }
 
 @keyframes driftPurple {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  40%       { transform: translate(6%, 8%) scale(1.08); }
-  70%       { transform: translate(-4%, -3%) scale(0.95); }
+  0%   { transform: translate(0, 0) scale(1) rotate(0deg);    border-radius: 50%; }
+  25%  { transform: translate(5%, 7%) scale(1.07) rotate(-12deg);  border-radius: 52% 48% 54% 46% / 48% 54% 46% 52%; }
+  50%  { transform: translate(-4%, 10%) scale(0.94) rotate(8deg);  border-radius: 46% 54% 48% 52% / 54% 46% 52% 48%; }
+  75%  { transform: translate(-7%, -4%) scale(1.09) rotate(-5deg); border-radius: 54% 46% 52% 48% / 50% 52% 48% 50%; }
+  100% { transform: translate(0, 0) scale(1) rotate(0deg);    border-radius: 50%; }
 }
 
 @keyframes driftMagenta {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  35%       { transform: translate(-8%, 5%) scale(1.06); }
-  65%       { transform: translate(5%, -7%) scale(0.96); }
+  0%   { transform: translate(0, 0) scale(1) rotate(0deg);    border-radius: 50%; }
+  20%  { transform: translate(-7%, 4%) scale(1.05) rotate(14deg);  border-radius: 48% 52% 56% 44% / 52% 48% 50% 50%; }
+  45%  { transform: translate(4%, -8%) scale(0.96) rotate(-9deg);  border-radius: 56% 44% 46% 54% / 46% 56% 44% 56%; }
+  65%  { transform: translate(-9%, -3%) scale(1.08) rotate(6deg);  border-radius: 44% 56% 52% 48% / 54% 44% 56% 46%; }
+  85%  { transform: translate(6%, 6%) scale(0.98) rotate(-11deg);  border-radius: 52% 48% 44% 56% / 48% 52% 48% 52%; }
+  100% { transform: translate(0, 0) scale(1) rotate(0deg);    border-radius: 50%; }
 }
 
 @keyframes driftCyan {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  45%       { transform: translate(-10%, -6%) scale(1.1); }
-  75%       { transform: translate(6%, 8%) scale(0.93); }
+  0%   { transform: translate(0, 0) scale(1) rotate(0deg);    border-radius: 50%; }
+  30%  { transform: translate(-9%, -5%) scale(1.1) rotate(-13deg); border-radius: 54% 46% 50% 50% / 46% 54% 50% 50%; }
+  55%  { transform: translate(5%, 9%) scale(0.92) rotate(10deg);   border-radius: 46% 54% 56% 44% / 52% 48% 46% 54%; }
+  75%  { transform: translate(8%, -6%) scale(1.05) rotate(-7deg);  border-radius: 50% 50% 44% 56% / 56% 44% 52% 48%; }
+  100% { transform: translate(0, 0) scale(1) rotate(0deg);    border-radius: 50%; }
 }
 
 @keyframes driftRed {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  30%       { transform: translate(-5%, 10%) scale(1.04); }
-  60%       { transform: translate(8%, -4%) scale(0.98); }
+  0%   { transform: translate(0, 0) scale(1) rotate(0deg);    border-radius: 50%; }
+  20%  { transform: translate(-4%, 9%) scale(1.03) rotate(11deg);  border-radius: 50% 50% 54% 46% / 48% 52% 50% 50%; }
+  40%  { transform: translate(7%, 5%) scale(0.97) rotate(-8deg);   border-radius: 46% 54% 48% 52% / 54% 46% 54% 46%; }
+  70%  { transform: translate(9%, -5%) scale(1.06) rotate(5deg);   border-radius: 54% 46% 52% 48% / 46% 54% 46% 54%; }
+  90%  { transform: translate(-6%, -7%) scale(0.99) rotate(-12deg);border-radius: 48% 52% 46% 54% / 52% 48% 52% 48%; }
+  100% { transform: translate(0, 0) scale(1) rotate(0deg);    border-radius: 50%; }
 }
 
 @keyframes driftPink {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50%       { transform: translate(-7%, -9%) scale(1.07); }
+  0%   { transform: translate(0, 0) scale(1) rotate(0deg);    border-radius: 50%; }
+  35%  { transform: translate(-6%, -8%) scale(1.08) rotate(-10deg);border-radius: 52% 48% 50% 50% / 44% 56% 46% 54%; }
+  65%  { transform: translate(5%, -4%) scale(0.95) rotate(13deg);  border-radius: 44% 56% 54% 46% / 52% 48% 54% 46%; }
+  100% { transform: translate(0, 0) scale(1) rotate(0deg);    border-radius: 50%; }
 }
 
 /* ─── Content ─────────────────────────────────────────────── */
@@ -145,25 +161,43 @@ body,
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
   padding: 2rem;
   text-align: center;
 }
 
 .logo {
+  transition: opacity 0.3s ease;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: clamp(4rem, 14vw, 10rem);
-  letter-spacing: -0.081em;
+  letter-spacing: -0.070em;
   color: #ffffff;
   line-height: 1;
   user-select: none;
+  margin-bottom: 2.5rem;
+}
+
+.logo--hidden {
+  opacity: 0;
+}
+
+.logo--alt {
+  font-family: 'Roboto Mono', monospace;
+}
+
+.logo-svg {
+  height: clamp(2.8rem, 9.8vw, 7rem);
+  width: auto;
+  overflow: visible;
+  transition: opacity 0.3s ease;
+  margin-bottom: 2.5rem;
 }
 
 .tagline {
   font-family: 'Roboto Mono', monospace;
   font-weight: 300;
-  font-size: clamp(0.75rem, 2vw, 1rem);
+  font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.75);
   max-width: 36ch;
   line-height: 1.6;
@@ -172,33 +206,46 @@ body,
 
 .product-link {
   font-family: 'Roboto Mono', monospace;
-  font-weight: 500;
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #ffffff;
+  font-weight: 400;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
-  border: 1px solid rgba(255, 255, 255, 0.55);
-  padding: 0.65rem 1.8rem;
-  border-radius: 2px;
-  transition: background 0.2s, border-color 0.2s;
+  background: none;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: color 0.2s;
 }
 
 .product-link:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.9);
+  color: #ffffff;
 }
 
-.footer-nav {
-  margin-top: 2rem;
+.product-icon {
+  width: 16px;
+  height: 16px;
+  opacity: 0.7;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.product-link:hover .product-icon {
+  opacity: 1;
+  transform: translate(1px, -1px);
 }
 
 .impress-btn {
+  position: fixed;
+  bottom: 1.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
   font-family: 'Roboto Mono', monospace;
   font-weight: 400;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   letter-spacing: 0.06em;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.38);
   background: none;
   border: none;
   cursor: pointer;
@@ -207,10 +254,15 @@ body,
 }
 
 .impress-btn:hover {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.85);
 }
 
-/* ─── Impressum modal ─────────────────────────────────────── */
+/* ─── Imprint modal ───────────────────────────────────────── */
+
+@keyframes fadeInModal {
+  from { opacity: 0; transform: scale(0.96) translateY(10px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
 
 .modal-overlay {
   position: fixed;
@@ -219,8 +271,9 @@ body,
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(28px) saturate(0.6);
+  -webkit-backdrop-filter: blur(28px) saturate(0.6);
   padding: 1.5rem;
 }
 
@@ -228,16 +281,17 @@ body,
   position: relative;
   max-width: 480px;
   width: 100%;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(40px) saturate(1.8) brightness(1.1);
-  -webkit-backdrop-filter: blur(40px) saturate(1.8) brightness(1.1);
-  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(70px) saturate(2.2) brightness(1.45);
+  -webkit-backdrop-filter: blur(70px) saturate(2.2) brightness(1.45);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: 20px;
   box-shadow:
-    0 8px 40px rgba(0, 0, 0, 0.35),
-    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    0 4px 32px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
   padding: 2.5rem;
   color: #ffffff;
+  animation: fadeInModal 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .modal-close {
