@@ -23,7 +23,10 @@ function App({ altFont = false }) {
             alt="Brise"
           />
         ) : (
-          <div className={`logo${imprintOpen ? ' logo--hidden' : ''}`} aria-label="Blise">Blise</div>
+          <>
+            <div className={`logo${imprintOpen ? ' logo--hidden' : ''}`} aria-label="Blijse">Blijse</div>
+            <div className="pronunciation">[blaɪz]</div>
+          </>
         )}
 
         <p className="tagline">
@@ -32,7 +35,7 @@ function App({ altFont = false }) {
 
         <a
           className="product-link"
-          href="https://www.wrestlingoctopi.com/"
+          href="https://wrestlingoctopi.com"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -71,7 +74,7 @@ function App({ altFont = false }) {
             </button>
             <h2 className="modal-title">Imprint</h2>
             <div className="modal-body">
-              <p><strong>Blise</strong></p>
+              <p><strong>Blijse</strong></p>
               <p>
                 [Street & Number]<br />
                 [ZIP Code] [City]<br />

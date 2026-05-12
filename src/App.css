@@ -7,13 +7,15 @@
 }
 
 :root {
-  --blue:    #1208c8;
-  --purple:  #7b2fd8;
-  --magenta: #c830d8;
-  --pink:    #e040a0;
-  --cyan:    #40d8cc;
-  --red:     #ff3830;
-  --orange:  #ff7830;
+  --yellow:  #e0d4ec;
+  --orange:  #8898cc;
+  --red:     #dccee8;
+  --magenta: #2838c0;
+  --pink:    #4858b8;
+  --purple:  #6070c0;
+  --indigo:  #1828a8;
+  --blue:    #3040c8;
+  --cyan:    #8090cc;
 }
 
 html,
@@ -32,7 +34,7 @@ body,
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #0a0520;
+  background: #6878c0;
 }
 
 .gradient-bg {
@@ -50,20 +52,20 @@ body,
 }
 
 .blob-blue {
-  width: 70vw;
-  height: 70vw;
+  width: 75vw;
+  height: 75vw;
   background: var(--blue);
   bottom: -20vw;
-  left: -15vw;
+  left: -10vw;
   animation: driftBlue 5.5s ease-in-out infinite;
 }
 
 .blob-purple {
-  width: 55vw;
-  height: 55vw;
+  width: 60vw;
+  height: 60vw;
   background: var(--purple);
-  top: -10vw;
-  left: -5vw;
+  bottom: 5%;
+  left: 10%;
   animation: driftPurple 6.5s ease-in-out infinite;
 }
 
@@ -71,35 +73,35 @@ body,
   width: 50vw;
   height: 50vw;
   background: var(--magenta);
-  top: 20%;
-  right: -10vw;
+  top: 25%;
+  right: -8vw;
   animation: driftMagenta 5s ease-in-out infinite;
 }
 
 .blob-cyan {
-  width: 45vw;
-  height: 45vw;
+  width: 50vw;
+  height: 50vw;
   background: var(--cyan);
-  top: 30%;
-  right: 10%;
+  bottom: -15vw;
+  right: -10vw;
   animation: driftCyan 6s ease-in-out infinite;
 }
 
 .blob-red {
-  width: 40vw;
-  height: 40vw;
-  background: var(--red);
+  width: 50vw;
+  height: 50vw;
+  background: var(--orange);
   top: -15vw;
-  right: -5vw;
+  left: -5vw;
   animation: driftRed 4.5s ease-in-out infinite;
 }
 
 .blob-pink {
-  width: 35vw;
-  height: 35vw;
-  background: var(--pink);
-  bottom: 5%;
-  right: 5%;
+  width: 45vw;
+  height: 45vw;
+  background: var(--yellow);
+  top: -10vw;
+  right: -5vw;
   animation: driftPink 7s ease-in-out infinite;
 }
 
@@ -175,7 +177,16 @@ body,
   color: #ffffff;
   line-height: 1;
   user-select: none;
-  margin-bottom: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.pronunciation {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 300;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: 0.02em;
+  margin-bottom: 2rem;
 }
 
 .logo--hidden {
