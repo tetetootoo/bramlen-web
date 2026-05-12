@@ -8,6 +8,7 @@ function App({ altFont = false }) {
     <div className="page">
       <div className="gradient-bg" aria-hidden="true">
         <div className="blob blob-blue" />
+        <div className="blob blob-indigo" />
         <div className="blob blob-purple" />
         <div className="blob blob-magenta" />
         <div className="blob blob-cyan" />

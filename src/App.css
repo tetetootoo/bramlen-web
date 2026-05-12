@@ -7,15 +7,14 @@
 }
 
 :root {
-  --yellow:  #f8d890;
-  --orange:  #f5b098;
-  --red:     #f0a0b0;
-  --magenta: #e8b0c0;
-  --pink:    #ecc8d8;
-  --purple:  #d8d0f0;
-  --indigo:  #c0c8f0;
-  --blue:    #b8e8f8;
-  --cyan:    #c8f0f8;
+  --peach:    #e09868;
+  --orange:   #cc7840;
+  --lavender: #9aacd8;
+  --sky:      #c0cce8;
+  --navy:     #0c1468;
+  --cobalt:   #1a30d8;
+  --royal:    #0c1caa;
+  --midnight: #080e40;
 }
 
 html,
@@ -34,13 +33,13 @@ body,
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f5f0ee;
+  background: #07091e;
 }
 
 .gradient-bg {
   position: absolute;
   inset: 0;
-  filter: blur(90px) saturate(1.4);
+  filter: blur(120px) saturate(1.2);
   z-index: 0;
 }
 
@@ -52,107 +51,132 @@ body,
 }
 
 .blob-blue {
-  width: 75vw;
-  height: 75vw;
-  background: var(--blue);
-  bottom: -20vw;
-  left: -10vw;
-  animation: driftBlue 5.5s ease-in-out infinite;
+  width: 85vw;
+  height: 85vw;
+  background: var(--cobalt);
+  bottom: -30vw;
+  right: -20vw;
+  animation: driftBlue 20s ease-in-out infinite;
 }
 
 .blob-purple {
-  width: 60vw;
-  height: 60vw;
-  background: var(--purple);
-  bottom: 5%;
-  left: 10%;
-  animation: driftPurple 6.5s ease-in-out infinite;
+  width: 70vw;
+  height: 70vw;
+  background: var(--midnight);
+  top: -20vw;
+  right: -10vw;
+  animation: driftPurple 25s ease-in-out infinite;
 }
 
 .blob-magenta {
-  width: 50vw;
-  height: 50vw;
-  background: var(--magenta);
-  top: 25%;
-  right: -8vw;
-  animation: driftMagenta 5s ease-in-out infinite;
+  width: 65vw;
+  height: 65vw;
+  background: var(--peach);
+  bottom: -20vw;
+  left: -15vw;
+  animation: driftMagenta 18s ease-in-out infinite;
+}
+
+.blob-indigo {
+  width: 60vw;
+  height: 60vw;
+  background: var(--royal);
+  bottom: -10vw;
+  left: 20%;
+  animation: driftIndigo 22s ease-in-out infinite;
 }
 
 .blob-cyan {
-  width: 50vw;
-  height: 50vw;
-  background: var(--cyan);
-  bottom: -15vw;
-  right: -10vw;
-  animation: driftCyan 6s ease-in-out infinite;
+  width: 55vw;
+  height: 55vw;
+  background: var(--lavender);
+  top: 15%;
+  left: -10vw;
+  animation: driftCyan 19s ease-in-out infinite;
 }
 
 .blob-red {
   width: 50vw;
   height: 50vw;
   background: var(--orange);
-  top: -15vw;
+  top: 30%;
   left: -5vw;
-  animation: driftRed 4.5s ease-in-out infinite;
+  animation: driftRed 16s ease-in-out infinite;
 }
 
 .blob-pink {
-  width: 45vw;
-  height: 45vw;
-  background: var(--yellow);
-  top: -10vw;
-  right: -5vw;
-  animation: driftPink 7s ease-in-out infinite;
+  width: 55vw;
+  height: 55vw;
+  background: var(--navy);
+  top: -15vw;
+  left: 15%;
+  animation: driftPink 28s ease-in-out infinite;
 }
 
 @keyframes driftBlue {
-  0%   { transform: translate(0, 0) scale(1) rotate(0deg);    border-radius: 50%; }
-  20%  { transform: translate(4%, -5%) scale(1.04) rotate(10deg);  border-radius: 46% 54% 52% 48% / 50% 46% 54% 50%; }
-  40%  { transform: translate(7%, 3%) scale(0.97) rotate(-6deg);   border-radius: 54% 46% 48% 52% / 52% 56% 44% 48%; }
-  60%  { transform: translate(-3%, 8%) scale(1.06) rotate(7deg);   border-radius: 48% 52% 54% 46% / 56% 44% 56% 44%; }
-  80%  { transform: translate(-6%, -2%) scale(1.02) rotate(-9deg); border-radius: 52% 48% 46% 54% / 46% 54% 46% 54%; }
-  100% { transform: translate(0, 0) scale(1) rotate(0deg);    border-radius: 50%; }
+  0%   { transform: translate(0, 0) scale(1);              border-radius: 50%; }
+  15%  { transform: translate(35%, -40%) scale(1.1);       border-radius: 30% 70% 60% 40% / 55% 40% 60% 45%; }
+  30%  { transform: translate(55%, 20%) scale(0.9);        border-radius: 65% 35% 40% 60% / 40% 65% 35% 60%; }
+  50%  { transform: translate(20%, 50%) scale(1.08);       border-radius: 40% 60% 70% 30% / 60% 35% 65% 40%; }
+  65%  { transform: translate(-30%, 35%) scale(0.95);      border-radius: 70% 30% 35% 65% / 35% 70% 30% 70%; }
+  80%  { transform: translate(-45%, -20%) scale(1.05);     border-radius: 35% 65% 55% 45% / 65% 30% 70% 35%; }
+  100% { transform: translate(0, 0) scale(1);              border-radius: 50%; }
 }
 
 @keyframes driftPurple {
-  0%   { transform: translate(0, 0) scale(1) rotate(0deg);    border-radius: 50%; }
-  25%  { transform: translate(5%, 7%) scale(1.07) rotate(-12deg);  border-radius: 52% 48% 54% 46% / 48% 54% 46% 52%; }
-  50%  { transform: translate(-4%, 10%) scale(0.94) rotate(8deg);  border-radius: 46% 54% 48% 52% / 54% 46% 52% 48%; }
-  75%  { transform: translate(-7%, -4%) scale(1.09) rotate(-5deg); border-radius: 54% 46% 52% 48% / 50% 52% 48% 50%; }
-  100% { transform: translate(0, 0) scale(1) rotate(0deg);    border-radius: 50%; }
+  0%   { transform: translate(0, 0) scale(1);              border-radius: 50%; }
+  20%  { transform: translate(-40%, 30%) scale(1.07);      border-radius: 60% 40% 30% 70% / 45% 60% 40% 55%; }
+  40%  { transform: translate(30%, 50%) scale(0.92);       border-radius: 35% 65% 65% 35% / 65% 35% 55% 45%; }
+  60%  { transform: translate(50%, -25%) scale(1.1);       border-radius: 70% 30% 45% 55% / 30% 70% 40% 60%; }
+  80%  { transform: translate(-20%, -45%) scale(0.96);     border-radius: 45% 55% 60% 40% / 60% 40% 65% 35%; }
+  100% { transform: translate(0, 0) scale(1);              border-radius: 50%; }
 }
 
 @keyframes driftMagenta {
-  0%   { transform: translate(0, 0) scale(1) rotate(0deg);    border-radius: 50%; }
-  20%  { transform: translate(-7%, 4%) scale(1.05) rotate(14deg);  border-radius: 48% 52% 56% 44% / 52% 48% 50% 50%; }
-  45%  { transform: translate(4%, -8%) scale(0.96) rotate(-9deg);  border-radius: 56% 44% 46% 54% / 46% 56% 44% 56%; }
-  65%  { transform: translate(-9%, -3%) scale(1.08) rotate(6deg);  border-radius: 44% 56% 52% 48% / 54% 44% 56% 46%; }
-  85%  { transform: translate(6%, 6%) scale(0.98) rotate(-11deg);  border-radius: 52% 48% 44% 56% / 48% 52% 48% 52%; }
-  100% { transform: translate(0, 0) scale(1) rotate(0deg);    border-radius: 50%; }
+  0%   { transform: translate(0, 0) scale(1);              border-radius: 50%; }
+  18%  { transform: translate(45%, -30%) scale(1.06);      border-radius: 65% 35% 50% 50% / 40% 60% 35% 65%; }
+  38%  { transform: translate(60%, 35%) scale(0.94);       border-radius: 30% 70% 65% 35% / 65% 30% 60% 40%; }
+  55%  { transform: translate(15%, 55%) scale(1.09);       border-radius: 55% 45% 35% 65% / 35% 65% 45% 55%; }
+  72%  { transform: translate(-40%, 25%) scale(0.97);      border-radius: 40% 60% 60% 40% / 60% 40% 55% 45%; }
+  88%  { transform: translate(-25%, -40%) scale(1.04);     border-radius: 60% 40% 40% 60% / 45% 55% 40% 60%; }
+  100% { transform: translate(0, 0) scale(1);              border-radius: 50%; }
 }
 
 @keyframes driftCyan {
-  0%   { transform: translate(0, 0) scale(1) rotate(0deg);    border-radius: 50%; }
-  30%  { transform: translate(-9%, -5%) scale(1.1) rotate(-13deg); border-radius: 54% 46% 50% 50% / 46% 54% 50% 50%; }
-  55%  { transform: translate(5%, 9%) scale(0.92) rotate(10deg);   border-radius: 46% 54% 56% 44% / 52% 48% 46% 54%; }
-  75%  { transform: translate(8%, -6%) scale(1.05) rotate(-7deg);  border-radius: 50% 50% 44% 56% / 56% 44% 52% 48%; }
-  100% { transform: translate(0, 0) scale(1) rotate(0deg);    border-radius: 50%; }
+  0%   { transform: translate(0, 0) scale(1);              border-radius: 50%; }
+  22%  { transform: translate(40%, 40%) scale(1.08);       border-radius: 70% 30% 40% 60% / 55% 45% 65% 35%; }
+  45%  { transform: translate(-35%, 50%) scale(0.93);      border-radius: 35% 65% 60% 40% / 40% 60% 35% 65%; }
+  65%  { transform: translate(-50%, -20%) scale(1.06);     border-radius: 55% 45% 30% 70% / 65% 35% 55% 45%; }
+  82%  { transform: translate(20%, -45%) scale(0.97);      border-radius: 40% 60% 65% 35% / 30% 70% 45% 55%; }
+  100% { transform: translate(0, 0) scale(1);              border-radius: 50%; }
+}
+
+@keyframes driftIndigo {
+  0%   { transform: translate(0, 0) scale(1);              border-radius: 50%; }
+  25%  { transform: translate(-50%, -35%) scale(1.09);     border-radius: 60% 40% 55% 45% / 35% 65% 40% 60%; }
+  48%  { transform: translate(25%, -50%) scale(0.91);      border-radius: 30% 70% 40% 60% / 60% 40% 65% 35%; }
+  68%  { transform: translate(50%, 30%) scale(1.07);       border-radius: 65% 35% 65% 35% / 45% 55% 35% 65%; }
+  85%  { transform: translate(-25%, 45%) scale(0.95);      border-radius: 45% 55% 35% 65% / 65% 35% 60% 40%; }
+  100% { transform: translate(0, 0) scale(1);              border-radius: 50%; }
 }
 
 @keyframes driftRed {
-  0%   { transform: translate(0, 0) scale(1) rotate(0deg);    border-radius: 50%; }
-  20%  { transform: translate(-4%, 9%) scale(1.03) rotate(11deg);  border-radius: 50% 50% 54% 46% / 48% 52% 50% 50%; }
-  40%  { transform: translate(7%, 5%) scale(0.97) rotate(-8deg);   border-radius: 46% 54% 48% 52% / 54% 46% 54% 46%; }
-  70%  { transform: translate(9%, -5%) scale(1.06) rotate(5deg);   border-radius: 54% 46% 52% 48% / 46% 54% 46% 54%; }
-  90%  { transform: translate(-6%, -7%) scale(0.99) rotate(-12deg);border-radius: 48% 52% 46% 54% / 52% 48% 52% 48%; }
-  100% { transform: translate(0, 0) scale(1) rotate(0deg);    border-radius: 50%; }
+  0%   { transform: translate(0, 0) scale(1);              border-radius: 50%; }
+  20%  { transform: translate(50%, 30%) scale(1.05);       border-radius: 35% 65% 55% 45% / 60% 40% 50% 50%; }
+  42%  { transform: translate(40%, -45%) scale(0.95);      border-radius: 60% 40% 35% 65% / 35% 65% 60% 40%; }
+  60%  { transform: translate(-20%, -50%) scale(1.08);     border-radius: 50% 50% 65% 35% / 65% 35% 40% 60%; }
+  78%  { transform: translate(-50%, 20%) scale(0.93);      border-radius: 70% 30% 45% 55% / 40% 60% 55% 45%; }
+  92%  { transform: translate(10%, 45%) scale(1.04);       border-radius: 40% 60% 60% 40% / 55% 45% 35% 65%; }
+  100% { transform: translate(0, 0) scale(1);              border-radius: 50%; }
 }
 
 @keyframes driftPink {
-  0%   { transform: translate(0, 0) scale(1) rotate(0deg);    border-radius: 50%; }
-  35%  { transform: translate(-6%, -8%) scale(1.08) rotate(-10deg);border-radius: 52% 48% 50% 50% / 44% 56% 46% 54%; }
-  65%  { transform: translate(5%, -4%) scale(0.95) rotate(13deg);  border-radius: 44% 56% 54% 46% / 52% 48% 54% 46%; }
-  100% { transform: translate(0, 0) scale(1) rotate(0deg);    border-radius: 50%; }
+  0%   { transform: translate(0, 0) scale(1);              border-radius: 50%; }
+  28%  { transform: translate(45%, 40%) scale(1.07);       border-radius: 55% 45% 30% 70% / 40% 60% 55% 45%; }
+  52%  { transform: translate(-30%, 50%) scale(0.92);      border-radius: 30% 70% 60% 40% / 65% 35% 45% 55%; }
+  74%  { transform: translate(-50%, -30%) scale(1.06);     border-radius: 65% 35% 50% 50% / 35% 65% 60% 40%; }
+  90%  { transform: translate(25%, -40%) scale(0.97);      border-radius: 45% 55% 40% 60% / 55% 45% 30% 70%; }
+  100% { transform: translate(0, 0) scale(1);              border-radius: 50%; }
 }
 
 /* ─── Content ─────────────────────────────────────────────── */
