@@ -7,15 +7,15 @@
 }
 
 :root {
-  --yellow:  #e0d4ec;
-  --orange:  #8898cc;
-  --red:     #dccee8;
-  --magenta: #2838c0;
-  --pink:    #4858b8;
-  --purple:  #6070c0;
-  --indigo:  #1828a8;
-  --blue:    #3040c8;
-  --cyan:    #8090cc;
+  --yellow:  #f8d890;
+  --orange:  #f5b098;
+  --red:     #f0a0b0;
+  --magenta: #e8b0c0;
+  --pink:    #ecc8d8;
+  --purple:  #d8d0f0;
+  --indigo:  #c0c8f0;
+  --blue:    #b8e8f8;
+  --cyan:    #c8f0f8;
 }
 
 html,
@@ -34,7 +34,7 @@ body,
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #6878c0;
+  background: #f5f0ee;
 }
 
 .gradient-bg {
@@ -174,7 +174,7 @@ body,
   font-weight: 700;
   font-size: clamp(4rem, 14vw, 10rem);
   letter-spacing: -0.070em;
-  color: #ffffff;
+  color: #2a1e40;
   line-height: 1;
   user-select: none;
   margin-bottom: 0.5rem;
@@ -184,7 +184,7 @@ body,
   font-family: 'Roboto Mono', monospace;
   font-weight: 300;
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(42, 30, 64, 0.55);
   letter-spacing: 0.02em;
   margin-bottom: 2rem;
 }
@@ -209,7 +209,7 @@ body,
   font-family: 'Roboto Mono', monospace;
   font-weight: 300;
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(42, 30, 64, 0.65);
   max-width: 36ch;
   line-height: 1.6;
   letter-spacing: 0.02em;
@@ -220,7 +220,7 @@ body,
   font-weight: 400;
   font-size: 0.9rem;
   letter-spacing: 0.04em;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(42, 30, 64, 0.75);
   text-decoration: none;
   background: none;
   border: none;
@@ -231,7 +231,7 @@ body,
 }
 
 .product-link:hover {
-  color: #ffffff;
+  color: #2a1e40;
 }
 
 .product-icon {
@@ -256,7 +256,7 @@ body,
   font-weight: 400;
   font-size: 0.7rem;
   letter-spacing: 0.06em;
-  color: rgba(255, 255, 255, 0.38);
+  color: rgba(42, 30, 64, 0.32);
   background: none;
   border: none;
   cursor: pointer;
@@ -265,7 +265,7 @@ body,
 }
 
 .impress-btn:hover {
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(42, 30, 64, 0.80);
 }
 
 /* ─── Imprint modal ───────────────────────────────────────── */
@@ -301,7 +301,7 @@ body,
     0 4px 32px rgba(0, 0, 0, 0.18),
     inset 0 1px 0 rgba(255, 255, 255, 0.4);
   padding: 2.5rem;
-  color: #ffffff;
+  color: #2a1e40;
   animation: fadeInModal 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
@@ -311,7 +311,7 @@ body,
   right: 1.25rem;
   background: none;
   border: none;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(42, 30, 64, 0.45);
   font-size: 1.6rem;
   line-height: 1;
   cursor: pointer;
@@ -320,7 +320,7 @@ body,
 }
 
 .modal-close:hover {
-  color: #ffffff;
+  color: #2a1e40;
 }
 
 .modal-title {
@@ -329,7 +329,7 @@ body,
   font-size: 1rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #ffffff;
+  color: #2a1e40;
   margin-bottom: 1.5rem;
 }
 
@@ -338,21 +338,21 @@ body,
   font-weight: 300;
   font-size: 0.8rem;
   line-height: 1.8;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(42, 30, 64, 0.70);
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
 .modal-body a {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(42, 30, 64, 0.85);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
 .modal-note {
   font-size: 0.7rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(42, 30, 64, 0.45);
   line-height: 1.7;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 1rem;
