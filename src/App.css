@@ -7,14 +7,13 @@
 }
 
 :root {
-  --peach:    #e09868;
-  --orange:   #cc7840;
-  --lavender: #9aacd8;
-  --sky:      #c0cce8;
-  --navy:     #0c1468;
-  --cobalt:   #1a30d8;
-  --royal:    #0c1caa;
-  --midnight: #080e40;
+  --slate:      #8a9ab8;
+  --steel:      #9aaac0;
+  --cool-gray:  #7888a5;
+  --warm-gray:  #b0a898;
+  --gold:       #c89050;
+  --amber:      #d4a038;
+  --cream:      #eedda8;
 }
 
 html,
@@ -33,83 +32,99 @@ body,
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #07091e;
+  background: #8a9ab8;
 }
 
 .gradient-bg {
   position: absolute;
   inset: 0;
-  filter: blur(120px) saturate(1.2);
+  filter: blur(130px) saturate(1.05);
   z-index: 0;
+}
+
+.page::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  opacity: 0.055;
+  mix-blend-mode: overlay;
 }
 
 .blob {
   position: absolute;
   border-radius: 50%;
-  opacity: 0.85;
+  opacity: 0.92;
   will-change: transform, border-radius;
 }
 
+/* cool blue-gray blobs — left zone */
 .blob-blue {
-  width: 85vw;
-  height: 85vw;
-  background: var(--cobalt);
-  bottom: -30vw;
-  right: -20vw;
+  width: 95vw;
+  height: 95vw;
+  background: var(--slate);
+  top: -25vw;
+  left: -20vw;
   animation: driftBlue 20s ease-in-out infinite;
 }
 
 .blob-purple {
-  width: 70vw;
-  height: 70vw;
-  background: var(--midnight);
-  top: -20vw;
-  right: -10vw;
+  width: 80vw;
+  height: 80vw;
+  background: var(--steel);
+  bottom: -20vw;
+  left: -15vw;
   animation: driftPurple 25s ease-in-out infinite;
 }
 
 .blob-magenta {
-  width: 65vw;
-  height: 65vw;
-  background: var(--peach);
-  bottom: -20vw;
-  left: -15vw;
+  width: 70vw;
+  height: 70vw;
+  background: var(--cool-gray);
+  top: 20%;
+  left: -10vw;
   animation: driftMagenta 18s ease-in-out infinite;
 }
 
+/* warm golden blobs — right zone */
 .blob-indigo {
-  width: 60vw;
-  height: 60vw;
-  background: var(--royal);
-  bottom: -10vw;
-  left: 20%;
+  width: 75vw;
+  height: 75vw;
+  background: var(--gold);
+  top: -15vw;
+  right: -20vw;
   animation: driftIndigo 22s ease-in-out infinite;
 }
 
 .blob-cyan {
-  width: 55vw;
-  height: 55vw;
-  background: var(--lavender);
-  top: 15%;
-  left: -10vw;
+  width: 70vw;
+  height: 70vw;
+  background: var(--amber);
+  bottom: -20vw;
+  right: -15vw;
   animation: driftCyan 19s ease-in-out infinite;
 }
 
+/* bright cream blob — luminous bloom highlight */
 .blob-red {
   width: 50vw;
   height: 50vw;
-  background: var(--orange);
-  top: 30%;
-  left: -5vw;
+  background: var(--cream);
+  top: 15%;
+  right: 5%;
   animation: driftRed 16s ease-in-out infinite;
 }
 
+/* warm-gray bridge blob — softens the cool/warm transition */
 .blob-pink {
-  width: 55vw;
-  height: 55vw;
-  background: var(--navy);
-  top: -15vw;
-  left: 15%;
+  width: 65vw;
+  height: 65vw;
+  background: var(--warm-gray);
+  top: 25%;
+  right: 15%;
   animation: driftPink 28s ease-in-out infinite;
 }
 
@@ -183,7 +198,7 @@ body,
 
 .content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
