@@ -75,7 +75,7 @@ function App({ altFont = false }) {
             </button>
             <h2 className="modal-title">Imprint</h2>
             <div className="modal-body">
-              <p><strong>Blijse</strong></p>
+              <p>Blijse</p>
               <p>
                 Købmagergade 45, 3tv.<br />
                 1150 Copenhagen<br />
