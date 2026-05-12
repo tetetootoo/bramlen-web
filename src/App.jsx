@@ -77,21 +77,12 @@ function App({ altFont = false }) {
             <div className="modal-body">
               <p><strong>Blijse</strong></p>
               <p>
-                [Street & Number]<br />
-                [ZIP Code] [City]<br />
-                [Country]
+                Købmagergade 45, 3tv.<br />
+                1150 Copenhagen<br />
+                Denmark
               </p>
               <p>
-                E-Mail: <a href="mailto:hello@blise.io">hello@blise.io</a>
-              </p>
-              <p>
-                Responsible for content:<br />
-                [Name of responsible person]
-              </p>
-              <p className="modal-note">
-                Liability for content and links: Despite careful review, we assume
-                no liability for external links. The respective operators are solely
-                responsible for the content of linked pages.
+                E-Mail: <a href="mailto:hi@blijse.com">hi@blijse.com</a>
               </p>
             </div>
           </div>
