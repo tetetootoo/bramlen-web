@@ -296,11 +296,11 @@ body,
   font-weight: 400;
   font-size: 0.7rem;
   letter-spacing: 0.06em;
-  color: rgba(255, 255, 255, 0.38);
+  color: rgba(255, 255, 255, 0.75);
   background: none;
   border: none;
   cursor: pointer;
-  text-transform: uppercase;
+  text-transform: capitalize;
   transition: color 0.2s;
   padding: 0.75rem 1.25rem;
   margin: -0.75rem -1.25rem;
