@@ -81,6 +81,7 @@ function App({ altFont = false }) {
                 1150 Copenhagen<br />
                 Denmark
               </p>
+              <p>CVR: 45714470</p>
               <p>
                 E-Mail: <a href="mailto:hi@blijse.com">hi@blijse.com</a>
               </p>
