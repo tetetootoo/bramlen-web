@@ -17,16 +17,16 @@ function App({ altFont = false }) {
         <div className="blob blob-pink" />
       </div>
 
-      <main className="content">
+      <main className={`content${imprintOpen || privacyOpen ? ' content--hidden' : ''}`}>
         {altFont ? (
           <img
-            className={`logo-svg${imprintOpen || privacyOpen ? ' logo--hidden' : ''}`}
+            className="logo-svg"
             src="/FAVICONS (29).png"
             alt="Brise"
           />
         ) : (
           <>
-            <div className={`logo${imprintOpen || privacyOpen ? ' logo--hidden' : ''}`} aria-label="Blijse">Blijse</div>
+            <div className="logo" aria-label="Blijse">Blijse</div>
             <div className="pronunciation">[blaɪz]</div>
           </>
         )}
@@ -48,7 +48,7 @@ function App({ altFont = false }) {
         </a>
       </main>
 
-      <div className="footer-btns">
+      <div className={`footer-btns${imprintOpen || privacyOpen ? ' footer-btns--hidden' : ''}`}>
         <button className="footer-btn" onClick={() => setImprintOpen(true)}>Imprint</button>
         <span className="footer-sep">·</span>
         <button className="footer-btn" onClick={() => setPrivacyOpen(true)}>Privacy Policy</button>
@@ -89,7 +89,7 @@ function App({ altFont = false }) {
           aria-modal="true"
           aria-label="Privacy Policy"
         >
-          <div className="modal-glass" onClick={(e) => e.stopPropagation()}>
+          <div className="modal-glass modal-glass--large" onClick={(e) => e.stopPropagation()}>
             <button className="modal-close" onClick={() => setPrivacyOpen(false)} aria-label="Close">×</button>
             <h2 className="modal-title">Privacy Policy</h2>
             <div className="modal-body">

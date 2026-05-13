@@ -206,6 +206,13 @@ body,
   gap: 1.5rem;
   padding: 2rem;
   text-align: center;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.content--hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .logo {
@@ -316,6 +323,11 @@ body,
   color: #ffffff;
 }
 
+.footer-btns--hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .footer-sep {
   font-family: 'Roboto Mono', monospace;
   font-size: 0.7rem;
@@ -358,6 +370,13 @@ body,
   padding: 2.5rem;
   color: #ffffff;
   animation: fadeInModal 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.modal-glass--large {
+  max-width: 70vw;
+  width: 70vw;
+  max-height: 70vh;
+  overflow-y: auto;
 }
 
 .modal-close {
@@ -428,6 +447,12 @@ body,
   .modal-glass {
     padding: 1.5rem;
     border-radius: 16px;
+  }
+
+  .modal-glass--large {
+    width: 100%;
+    max-width: 100%;
+    max-height: 80vh;
   }
 
   .modal-overlay {
