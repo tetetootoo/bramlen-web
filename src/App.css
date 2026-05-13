@@ -303,7 +303,6 @@ body,
   text-transform: capitalize;
   transition: color 0.2s;
   padding: 0.75rem 1.25rem;
-  margin: -0.75rem -1.25rem;
 }
 
 .impress-btn:hover {
