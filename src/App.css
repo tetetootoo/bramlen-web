@@ -286,27 +286,41 @@ body,
   transform: translate(1px, -1px);
 }
 
-.impress-btn {
+.footer-btns {
   position: fixed;
   bottom: calc(1.75rem + env(safe-area-inset-bottom));
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  white-space: nowrap;
+}
+
+.footer-btn {
   font-family: 'Roboto Mono', monospace;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 0.7rem;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.02em;
   color: rgba(255, 255, 255, 0.75);
   background: none;
   border: none;
   cursor: pointer;
   text-transform: capitalize;
   transition: color 0.2s;
-  padding: 0.75rem 1.25rem;
+  padding: 0.75rem 0.25rem;
 }
 
-.impress-btn:hover {
-  color: rgba(255, 255, 255, 0.85);
+.footer-btn:hover {
+  color: #ffffff;
+}
+
+.footer-sep {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.4);
+  user-select: none;
 }
 
 /* ─── Imprint modal ───────────────────────────────────────── */
