@@ -22,13 +22,10 @@ function App({ altFont = false }) {
           <img
             className="logo-svg"
             src="/FAVICONS (29).png"
-            alt="Brise"
+            alt="Bramlen"
           />
         ) : (
-          <>
-            <div className="logo" aria-label="Blijse">Blijse</div>
-            <div className="pronunciation">[blaɪz]</div>
-          </>
+          <div className="logo" aria-label="Bramlen">Bramlen</div>
         )}
 
         <p className="tagline">
@@ -66,7 +63,7 @@ function App({ altFont = false }) {
             <button className="modal-close" onClick={() => setImprintOpen(false)} aria-label="Close">×</button>
             <h2 className="modal-title">Imprint</h2>
             <div className="modal-body">
-              <p>Blijse</p>
+              <p>Bramlen</p>
               <p>
                 Købmagergade 45, 3tv.<br />
                 1150 Copenhagen<br />
@@ -74,7 +71,7 @@ function App({ altFont = false }) {
               </p>
               <p>CVR-/SE-Nr. 46480023</p>
               <p>
-                E-Mail: <a href="mailto:hi@blijse.com">hi@blijse.com</a>
+                E-Mail: <a href="mailto:hi@bramlen.com">hi@bramlen.com</a>
               </p>
             </div>
           </div>
@@ -94,7 +91,7 @@ function App({ altFont = false }) {
             <h2 className="modal-title">Privacy Policy</h2>
             <div className="modal-body">
               <p>
-                Blijse, Købmagergade 45, 3tv., 1150 Copenhagen, Denmark is the data controller for this website.
+                Bramlen, Købmagergade 45, 3tv., 1150 Copenhagen, Denmark is the data controller for this website.
               </p>
               <p>
                 When you visit this website, our hosting provider automatically records standard server log data —
@@ -112,7 +109,7 @@ function App({ altFont = false }) {
               <p>
                 Under GDPR you have the right to access, correct, delete, or restrict processing of your personal
                 data, as well as the right to data portability and to object to processing. To exercise any of
-                these rights, contact us at <a href="mailto:hi@blijse.com">hi@blijse.com</a>.
+                these rights, contact us at <a href="mailto:hi@bramlen.com">hi@bramlen.com</a>.
               </p>
               <p>
                 You also have the right to lodge a complaint with the Danish Data Protection Agency:<br />

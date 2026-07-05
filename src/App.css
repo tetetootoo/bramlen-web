@@ -227,15 +227,6 @@ body,
   margin-bottom: 0.5rem;
 }
 
-.pronunciation {
-  font-family: 'Roboto Mono', monospace;
-  font-weight: 300;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.75);
-  letter-spacing: 0.02em;
-  margin-bottom: 2rem;
-}
-
 .logo--hidden {
   opacity: 0;
 }
@@ -438,10 +429,6 @@ body,
   .content {
     gap: 1rem;
     padding: 1.5rem;
-  }
-
-  .pronunciation {
-    margin-bottom: 1rem;
   }
 
   .modal-glass {
