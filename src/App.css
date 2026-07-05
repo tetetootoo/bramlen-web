@@ -7,13 +7,29 @@
 }
 
 :root {
-  --slate:      #8a9ab8;
-  --steel:      #9aaac0;
-  --cool-gray:  #7888a5;
-  --warm-gray:  #b0a898;
-  --gold:       #c89050;
-  --amber:      #d4a038;
-  --cream:      #eedda8;
+  --bg: #f5f6fa;
+  --ink: #14151c;
+  --sub: #5b5f72;
+  --accent: #3d52e0;
+  --card-bg: rgba(20, 21, 28, 0.04);
+  --card-border: rgba(20, 21, 28, 0.1);
+  --surface: #ffffff;
+  --surface-border: rgba(20, 21, 28, 0.08);
+  --surface-shadow: 0 20px 60px rgba(20, 21, 28, 0.12);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #090a0f;
+    --ink: #ecedf2;
+    --sub: #9296a8;
+    --accent: #7c8cff;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --card-border: rgba(236, 237, 242, 0.12);
+    --surface: #14151c;
+    --surface-border: rgba(236, 237, 242, 0.12);
+    --surface-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  }
 }
 
 html,
@@ -23,176 +39,14 @@ body,
   width: 100%;
 }
 
-/* ─── Gradient background ─────────────────────────────────── */
-
 .page {
   position: relative;
   min-height: 100vh;
   min-height: 100dvh;
-  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #8a9ab8;
-}
-
-.gradient-bg {
-  position: absolute;
-  inset: 0;
-  filter: blur(130px) saturate(1.05);
-  z-index: 0;
-}
-
-.page::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-  background-size: 200px 200px;
-  opacity: 0.055;
-  mix-blend-mode: overlay;
-}
-
-.blob {
-  position: absolute;
-  border-radius: 50%;
-  opacity: 0.92;
-  will-change: transform, border-radius;
-}
-
-/* cool blue-gray blobs — left zone */
-.blob-blue {
-  width: 95vw;
-  height: 95vw;
-  background: var(--slate);
-  top: -25vw;
-  left: -20vw;
-  animation: driftBlue 20s ease-in-out infinite;
-}
-
-.blob-purple {
-  width: 80vw;
-  height: 80vw;
-  background: var(--steel);
-  bottom: -20vw;
-  left: -15vw;
-  animation: driftPurple 25s ease-in-out infinite;
-}
-
-.blob-magenta {
-  width: 70vw;
-  height: 70vw;
-  background: var(--cool-gray);
-  top: 20%;
-  left: -10vw;
-  animation: driftMagenta 18s ease-in-out infinite;
-}
-
-/* warm golden blobs — right zone */
-.blob-indigo {
-  width: 75vw;
-  height: 75vw;
-  background: var(--gold);
-  top: -15vw;
-  right: -20vw;
-  animation: driftIndigo 22s ease-in-out infinite;
-}
-
-.blob-cyan {
-  width: 70vw;
-  height: 70vw;
-  background: var(--amber);
-  bottom: -20vw;
-  right: -15vw;
-  animation: driftCyan 19s ease-in-out infinite;
-}
-
-/* bright cream blob — luminous bloom highlight */
-.blob-red {
-  width: 50vw;
-  height: 50vw;
-  background: var(--cream);
-  top: 15%;
-  right: 5%;
-  animation: driftRed 16s ease-in-out infinite;
-}
-
-/* warm-gray bridge blob — softens the cool/warm transition */
-.blob-pink {
-  width: 65vw;
-  height: 65vw;
-  background: var(--warm-gray);
-  top: 25%;
-  right: 15%;
-  animation: driftPink 28s ease-in-out infinite;
-}
-
-@keyframes driftBlue {
-  0%   { transform: translate(0, 0) scale(1);              border-radius: 50%; }
-  15%  { transform: translate(35%, -40%) scale(1.1);       border-radius: 30% 70% 60% 40% / 55% 40% 60% 45%; }
-  30%  { transform: translate(55%, 20%) scale(0.9);        border-radius: 65% 35% 40% 60% / 40% 65% 35% 60%; }
-  50%  { transform: translate(20%, 50%) scale(1.08);       border-radius: 40% 60% 70% 30% / 60% 35% 65% 40%; }
-  65%  { transform: translate(-30%, 35%) scale(0.95);      border-radius: 70% 30% 35% 65% / 35% 70% 30% 70%; }
-  80%  { transform: translate(-45%, -20%) scale(1.05);     border-radius: 35% 65% 55% 45% / 65% 30% 70% 35%; }
-  100% { transform: translate(0, 0) scale(1);              border-radius: 50%; }
-}
-
-@keyframes driftPurple {
-  0%   { transform: translate(0, 0) scale(1);              border-radius: 50%; }
-  20%  { transform: translate(-40%, 30%) scale(1.07);      border-radius: 60% 40% 30% 70% / 45% 60% 40% 55%; }
-  40%  { transform: translate(30%, 50%) scale(0.92);       border-radius: 35% 65% 65% 35% / 65% 35% 55% 45%; }
-  60%  { transform: translate(50%, -25%) scale(1.1);       border-radius: 70% 30% 45% 55% / 30% 70% 40% 60%; }
-  80%  { transform: translate(-20%, -45%) scale(0.96);     border-radius: 45% 55% 60% 40% / 60% 40% 65% 35%; }
-  100% { transform: translate(0, 0) scale(1);              border-radius: 50%; }
-}
-
-@keyframes driftMagenta {
-  0%   { transform: translate(0, 0) scale(1);              border-radius: 50%; }
-  18%  { transform: translate(45%, -30%) scale(1.06);      border-radius: 65% 35% 50% 50% / 40% 60% 35% 65%; }
-  38%  { transform: translate(60%, 35%) scale(0.94);       border-radius: 30% 70% 65% 35% / 65% 30% 60% 40%; }
-  55%  { transform: translate(15%, 55%) scale(1.09);       border-radius: 55% 45% 35% 65% / 35% 65% 45% 55%; }
-  72%  { transform: translate(-40%, 25%) scale(0.97);      border-radius: 40% 60% 60% 40% / 60% 40% 55% 45%; }
-  88%  { transform: translate(-25%, -40%) scale(1.04);     border-radius: 60% 40% 40% 60% / 45% 55% 40% 60%; }
-  100% { transform: translate(0, 0) scale(1);              border-radius: 50%; }
-}
-
-@keyframes driftCyan {
-  0%   { transform: translate(0, 0) scale(1);              border-radius: 50%; }
-  22%  { transform: translate(40%, 40%) scale(1.08);       border-radius: 70% 30% 40% 60% / 55% 45% 65% 35%; }
-  45%  { transform: translate(-35%, 50%) scale(0.93);      border-radius: 35% 65% 60% 40% / 40% 60% 35% 65%; }
-  65%  { transform: translate(-50%, -20%) scale(1.06);     border-radius: 55% 45% 30% 70% / 65% 35% 55% 45%; }
-  82%  { transform: translate(20%, -45%) scale(0.97);      border-radius: 40% 60% 65% 35% / 30% 70% 45% 55%; }
-  100% { transform: translate(0, 0) scale(1);              border-radius: 50%; }
-}
-
-@keyframes driftIndigo {
-  0%   { transform: translate(0, 0) scale(1);              border-radius: 50%; }
-  25%  { transform: translate(-50%, -35%) scale(1.09);     border-radius: 60% 40% 55% 45% / 35% 65% 40% 60%; }
-  48%  { transform: translate(25%, -50%) scale(0.91);      border-radius: 30% 70% 40% 60% / 60% 40% 65% 35%; }
-  68%  { transform: translate(50%, 30%) scale(1.07);       border-radius: 65% 35% 65% 35% / 45% 55% 35% 65%; }
-  85%  { transform: translate(-25%, 45%) scale(0.95);      border-radius: 45% 55% 35% 65% / 65% 35% 60% 40%; }
-  100% { transform: translate(0, 0) scale(1);              border-radius: 50%; }
-}
-
-@keyframes driftRed {
-  0%   { transform: translate(0, 0) scale(1);              border-radius: 50%; }
-  20%  { transform: translate(50%, 30%) scale(1.05);       border-radius: 35% 65% 55% 45% / 60% 40% 50% 50%; }
-  42%  { transform: translate(40%, -45%) scale(0.95);      border-radius: 60% 40% 35% 65% / 35% 65% 60% 40%; }
-  60%  { transform: translate(-20%, -50%) scale(1.08);     border-radius: 50% 50% 65% 35% / 65% 35% 40% 60%; }
-  78%  { transform: translate(-50%, 20%) scale(0.93);      border-radius: 70% 30% 45% 55% / 40% 60% 55% 45%; }
-  92%  { transform: translate(10%, 45%) scale(1.04);       border-radius: 40% 60% 60% 40% / 55% 45% 35% 65%; }
-  100% { transform: translate(0, 0) scale(1);              border-radius: 50%; }
-}
-
-@keyframes driftPink {
-  0%   { transform: translate(0, 0) scale(1);              border-radius: 50%; }
-  28%  { transform: translate(45%, 40%) scale(1.07);       border-radius: 55% 45% 30% 70% / 40% 60% 55% 45%; }
-  52%  { transform: translate(-30%, 50%) scale(0.92);      border-radius: 30% 70% 60% 40% / 65% 35% 45% 55%; }
-  74%  { transform: translate(-50%, -30%) scale(1.06);     border-radius: 65% 35% 50% 50% / 35% 65% 60% 40%; }
-  90%  { transform: translate(25%, -40%) scale(0.97);      border-radius: 45% 55% 40% 60% / 55% 45% 30% 70%; }
-  100% { transform: translate(0, 0) scale(1);              border-radius: 50%; }
+  background: var(--bg);
 }
 
 /* ─── Content ─────────────────────────────────────────────── */
@@ -218,13 +72,12 @@ body,
 .logo {
   transition: opacity 0.3s ease;
   font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  font-size: clamp(3rem, 14vw, 10rem);
-  letter-spacing: -0.070em;
-  color: #ffffff;
-  line-height: 1;
+  font-weight: 300;
+  font-size: clamp(3.5rem, 11vw, 7rem);
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  line-height: 0.95;
   user-select: none;
-  margin-bottom: 0.5rem;
 }
 
 .logo--hidden {
@@ -247,7 +100,7 @@ body,
   font-family: 'Roboto Mono', monospace;
   font-weight: 300;
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--sub);
   max-width: 36ch;
   line-height: 1.6;
   letter-spacing: 0.02em;
@@ -256,20 +109,23 @@ body,
 .product-link {
   font-family: 'Roboto Mono', monospace;
   font-weight: 400;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   letter-spacing: 0.04em;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--ink);
   text-decoration: none;
-  background: none;
-  border: none;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  padding: 0.85rem 1.5rem;
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  transition: color 0.2s;
+  gap: 0.5rem;
+  transition: border-color 0.2s, transform 0.2s;
 }
 
 .product-link:hover {
-  color: #ffffff;
+  border-color: var(--accent);
+  transform: translateY(-1px);
 }
 
 .product-icon {
@@ -301,7 +157,7 @@ body,
   font-weight: 300;
   font-size: 0.7rem;
   letter-spacing: 0.02em;
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--sub);
   background: none;
   border: none;
   cursor: pointer;
@@ -311,7 +167,7 @@ body,
 }
 
 .footer-btn:hover {
-  color: #ffffff;
+  color: var(--ink);
 }
 
 .footer-btns--hidden {
@@ -322,7 +178,8 @@ body,
 .footer-sep {
   font-family: 'Roboto Mono', monospace;
   font-size: 0.7rem;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--sub);
+  opacity: 0.6;
   user-select: none;
 }
 
@@ -340,9 +197,9 @@ body,
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(28px) saturate(0.6);
-  -webkit-backdrop-filter: blur(28px) saturate(0.6);
+  background: rgba(20, 21, 28, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   padding: 1.5rem;
 }
 
@@ -350,16 +207,12 @@ body,
   position: relative;
   max-width: 480px;
   width: 100%;
-  background: rgba(255, 255, 255, 0.14);
-  backdrop-filter: blur(70px) saturate(2.2) brightness(1.45);
-  -webkit-backdrop-filter: blur(70px) saturate(2.2) brightness(1.45);
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
   border-radius: 20px;
-  box-shadow:
-    0 4px 32px rgba(0, 0, 0, 0.18),
-    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  box-shadow: var(--surface-shadow);
   padding: 2.5rem;
-  color: #ffffff;
+  color: var(--ink);
   animation: fadeInModal 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
@@ -376,7 +229,7 @@ body,
   right: 1.25rem;
   background: none;
   border: none;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--sub);
   font-size: 1.6rem;
   line-height: 1;
   cursor: pointer;
@@ -385,7 +238,7 @@ body,
 }
 
 .modal-close:hover {
-  color: #ffffff;
+  color: var(--ink);
 }
 
 .modal-title {
@@ -393,7 +246,7 @@ body,
   font-weight: 300;
   font-size: 0.9rem;
   letter-spacing: 0.02em;
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--sub);
   margin-bottom: 1.5rem;
 }
 
@@ -403,23 +256,24 @@ body,
   font-size: 0.9rem;
   line-height: 1.6;
   letter-spacing: 0.02em;
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--sub);
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
 .modal-body a {
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--ink);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
 .modal-note {
   font-size: 0.7rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--sub);
+  opacity: 0.7;
   line-height: 1.7;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid var(--surface-border);
   padding-top: 1rem;
 }
 

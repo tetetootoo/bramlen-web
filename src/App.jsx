@@ -7,16 +7,6 @@ function App({ altFont = false }) {
 
   return (
     <div className="page">
-      <div className="gradient-bg" aria-hidden="true">
-        <div className="blob blob-blue" />
-        <div className="blob blob-indigo" />
-        <div className="blob blob-purple" />
-        <div className="blob blob-magenta" />
-        <div className="blob blob-cyan" />
-        <div className="blob blob-red" />
-        <div className="blob blob-pink" />
-      </div>
-
       <main className={`content${imprintOpen || privacyOpen ? ' content--hidden' : ''}`}>
         {altFont ? (
           <img
@@ -29,7 +19,7 @@ function App({ altFont = false }) {
         )}
 
         <p className="tagline">
-          The parent company for thoughtfully built software applications.
+          The mother of thoughtfully built software applications.
         </p>
 
         <a
