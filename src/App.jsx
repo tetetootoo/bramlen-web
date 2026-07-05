@@ -63,7 +63,7 @@ function App({ altFont = false }) {
             <button className="modal-close" onClick={() => setImprintOpen(false)} aria-label="Close">×</button>
             <h2 className="modal-title">Imprint</h2>
             <div className="modal-body">
-              <p>Bramlen</p>
+              <p>Bramlen by Half Odd</p>
               <p>
                 Købmagergade 45, 3tv.<br />
                 1150 Copenhagen<br />
