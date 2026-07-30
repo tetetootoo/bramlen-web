@@ -19,7 +19,7 @@ function App({ altFont = false }) {
         )}
 
         <p className="tagline">
-          The mother of thoughtfully built software applications.
+          The mother of thoughtfully built software applications
         </p>
 
         <a
