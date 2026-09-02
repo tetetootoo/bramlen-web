@@ -19,7 +19,7 @@ function App({ altFont = false }) {
         )}
 
         <p className="tagline">
-          The mother of thoughtfully built software applications
+          Mother of thoughtfully built software applications
         </p>
 
         <a
@@ -53,7 +53,12 @@ function App({ altFont = false }) {
             <button className="modal-close" onClick={() => setImprintOpen(false)} aria-label="Close">×</button>
             <h2 className="modal-title">Imprint</h2>
             <div className="modal-body">
-              <p>Bramlen by Half Odd</p>
+              <p>
+                Bramlen by{' '}
+                <a href="https://halfodd.com" target="_blank" rel="noopener noreferrer">
+                  Half Odd
+                </a>
+              </p>
               <p>
                 Købmagergade 45, 3tv.<br />
                 1150 Copenhagen<br />
