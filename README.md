@@ -43,3 +43,9 @@ AI-assisted development is part of that process, but product decisions, architec
 ## Part of Half Odd
 
 Bramlen is the software branch of [Half Odd](https://www.halfodd.com/), an independent design and technology practice by Theresa Schantz.
+
+## License
+
+Copyright (c) 2026 Theresa Schantz. All rights reserved.
+
+See [LICENSE](LICENSE).
